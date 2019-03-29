@@ -16,9 +16,6 @@ public class Dummy {
 
     private String content;
 
-
-    
-
     @Builder
     public Dummy(String title, String content) {
         this.title = title;
