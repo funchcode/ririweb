@@ -12,17 +12,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DummyRepositoryTest {
-    @Autowired
-    DummyRepository dummyRepository;
-
-    @MockBean
-    private Dummy dummy;
+//    @Autowired
+//    DummyRepository dummyRepository;
+//
+//    @MockBean
+//    private Dummy dummy;
 
     @After
     public void cleanup() {
 //        dummyRepository.deleteAll();
-        dummy = new Dummy("title1", "content1");
-        dummyRepository.save(dummy);
+//        dummy = new Dummy("title1", "content1");
+//        dummyRepository.save(dummy);
     }
 
     @Test
