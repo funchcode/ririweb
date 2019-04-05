@@ -18,14 +18,14 @@ public class DummyRepositoryTest {
 //    @MockBean
 //    private Dummy dummy;
 
-    @After
-    public void cleanup() {
+//    @After
+//    public void cleanup() {
 //        dummyRepository.deleteAll();
 //        dummy = new Dummy("title1", "content1");
 //        dummyRepository.save(dummy);
-    }
+//    }
 
-    @Test
-    public void addContent() {
-    }
+//    @Test
+//    public void addContent() {
+//    }
 }
