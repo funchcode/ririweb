@@ -1,4 +1,10 @@
 spring:
-  h2:
-    console:
-      enabled: true
+  profiles:
+    active: local
+
+# local 환경
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: true
