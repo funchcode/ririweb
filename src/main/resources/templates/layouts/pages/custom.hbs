@@ -1,0 +1,87 @@
+{{#> layouts/base }}
+    {{#* inline "content"}}
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Month</span>
+                        </div>
+                        <input type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Phone</span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Staff</span>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>원장</option>
+                            <option value="1">직원1</option>
+                            <option value="2">직원2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-text">@</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ex)naver.com">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Sex</span>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>여자</option>
+                            <option value="1">남자</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Memo</span>
+                        </div>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </form>
+    {{/inline}}
+
+    {{#* inline "footer"}}
+        <script></script>
+    {{/inline}}
+{{/layouts/base}}

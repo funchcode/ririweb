@@ -11,3 +11,8 @@ spring:
     username: root
   jpa:
     show-sql: true
+  devtools:
+    livereload:
+      enabled: true
+handlebars:
+  cache: false
