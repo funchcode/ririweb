@@ -19,8 +19,7 @@ public class ClientRepositoryTests {
     @Test
     public void 고객_등록_테스트() {
         // given
-        Client client = Client.builder().clientNo(1).phone("010-0101-1010").job("대통령").memo("VVIP 고객")
-                .name("문재인").staff(1).build();
+        Client client = Client.builder().name("").phone("").build();
         List<Client> result;
 
         // when

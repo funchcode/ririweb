@@ -12,6 +12,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+/*
+    회원권 리스트 모두 불러오기 [ 금액 남은 사람 / 금액 다 소모한 사람 ],
+    선택 고객 회원권 등록하기, 회원권 취소
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class MembershipListServiceTests {

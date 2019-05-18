@@ -13,6 +13,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+/*
+    카테고리 선택 후 새로운 메뉴 등록,
+    메뉴 사용안함, 수정
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class ServicesServiceTests {

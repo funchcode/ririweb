@@ -1,0 +1,100 @@
+{{#> layouts/base}}
+    {{#* inline "content"}}
+        <form id="enroll">
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">이름</span>
+                        </div>
+                        <input id="name" type="text" class="form-control" placeholder="직원 이름" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">생년월일</span>
+                        </div>
+                        <input id="birth-month" type="number" class="form-control" min="1" max="12">
+                        <div class="input-group-append">
+                            <span class="input-group-text">월</span>
+                        </div>
+                        <input id="birth-day" type="number" class="form-control" min="1" max="31">
+                        <div class="input-group-append">
+                            <span class="input-group-text">일</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">휴대폰</span>
+                        </div>
+                        <input id="phone" type="tel" class="form-control" maxlength="13" placeholder="휴대폰 번호">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">부서</span>
+                        </div>
+                        <select class="custom-select" id="part">
+                            <option value="nail" selected>네일아트</option>
+                            <option value="eyebrow">속눈썹</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">근무 시작 일</span>
+                        </div>
+                        <input id="start-year" type="number" class="form-control" min="2018" max="2100">
+                        <div class="input-group-append">
+                            <span class="input-group-text">년</span>
+                        </div>
+                        <input id="start-month" type="number" class="form-control" min="1" max="12">
+                        <div class="input-group-append">
+                            <span class="input-group-text">월</span>
+                        </div>
+                        <input id="start-day" type="number" class="form-control" min="1" max="31">
+                        <div class="input-group-append">
+                            <span class="input-group-text">일</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">자격증 유무</span>
+                        </div>
+                        <select class="custom-select" id="certificate">
+                            <option name="sex" value="n" selected>없음</option>
+                            <option name="sex" value="y">있음</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">근무상태</span>
+                        </div>
+                        <select class="custom-select" id="state">
+                            <option name="sex" value="during" selected>재직</option>
+                            <!--<option name="sex" value="leave">퇴사</option>-->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark">Dark</button>
+        </form>
+    {{/inline}}
+
+    {{#* inline "footer"}}
+        <script src="/js/staff.js"></script>
+    {{/inline}}
+{{/layouts/base}}

@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+/*
+    직원 등록, 수정, 상태변경
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class StaffServiceTests {

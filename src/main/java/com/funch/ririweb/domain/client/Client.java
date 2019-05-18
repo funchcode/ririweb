@@ -6,16 +6,13 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Builder
 public class Client extends BaseTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long clientNo;
 
     @NotNull
@@ -35,4 +32,17 @@ public class Client extends BaseTimeEntity {
     private String job;
 
     private String memo;
+
+    @Builder
+    private Client(String name, LocalDate birthday, String phone, long staff, String email,
+                   char gender, String job, String memo) {
+        this.name = name;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.staff = staff;
+        this.email = email;
+        this.gender = gender;
+        this.job = job;
+        this.memo = memo;
+    }
 }

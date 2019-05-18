@@ -1,6 +1,6 @@
 ##### 🏷 여자친구를 위해 계획한 토이 프로젝트입니다. <br>🏷 우연히 이 코드를 보시는 분들 현실적인 피드백주시면 감사하겠습니다. <br>🏷 funchcode@gmail.com 👈🏽 피드백(url 또는 키워드)주시면 열심히 공부하겠습니다. <br>
 <br>
-<h2>네일 샵 관리 프로그램(미완)</h2> <br>
+<h2>네일 샵 관리 프로그램(미완)</h2>
 
 ### 사용(할)기술
 
@@ -50,6 +50,22 @@ GenerationType.AUTO를 사용하는 모든 Entity가 hibernate_sequence 테이�
 👉🏽 Handlebars 정적자원 변경시 자동 갱신하는 방법은 application.yml에 handlebars:cache: false로 설정한다.<br>
 <br>
 👉🏽 Javascript Arrow Function에서 에러가 발생 시 Intellij IDEA Preferences에 Language 클릭 Javascript ECMA Script 6로 업그레이드하면 된다.<br>
+<br>
+👉🏽 버튼 Click시에 Ajax요청을 보내는 코드 중 Input 속성(required 등)이 무시 <br>
+현재 jQuery로 이벤트 및 Ajax처리를 구현 중인데 Id 값을 Form태그에 주고 이벤트를 submit으로 연결하면 Input 속성 이용 가능하다. <br>
+<br>
+👉🏽 HTML Select에 만족하는 조건이 없을 경우 Input으로 데이터를 다루고 싶었다. <br>
+`<input list="ok" /><datalist id="ok"> ...options... </datalist>`원하는 동작을 얻을 수 있었다. <br>
+<br>
+👉🏽 Ajax 요청 시 다음과 같은 코드 `...application/x-www-form-urlencoded; charset=UTF-8` ContentType을 넘기게 된다. <br>
+Ajax 요청 시에 ContentType을 명시하지 않게 되면 default로 위의 텍스트가 설정된다. <br>
+RequestBody로 JSON을 날릴 것이기 때문에 ContentType을 Ajax 코드 내에서 `application/json`으로 명시한다. <br>
+강제로 ContentType을 `application/json`주면 내가 원하는 FormData가 아닌 Payload로 날라가기 때문에 다루기 어렵기만하다. <br>
+request를 직접 핸들링하는 방식보다는 DTO를 만들고 request안에 json으로 넘어온 정보를 Jackson과 같은 라이브러리를 사용해서 DTO에 집어넣는 형식이 간편하다. <br> 
+<br>
+👉🏽 ContentType을 json으로 명시했지만 `HttpMessageNotReadableException...was expecting ('true', 'false' or 'null')` 에러가 발생한다. <br>
+json 데이터 중 key로 인식되지 않아 발생하는 문제로서, `JSON.stringify()`를 통해 key로 인식되기 위해 key도 문자열로 만들어서 보내야한다. <br> 
+<br>
 
 ---
 ### 계획(진행) 현황 <br>

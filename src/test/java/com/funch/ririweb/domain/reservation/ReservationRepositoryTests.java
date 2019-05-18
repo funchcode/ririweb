@@ -19,7 +19,7 @@ public class ReservationRepositoryTests {
     public void 예약_등록_테스트() {
         // given
         Reservation reservation = Reservation.builder().clientNo(3)
-                .staffNo(10).serviceNo(9).build();
+                .staffNo(10).build();
         List<Reservation> result;
 
         // when

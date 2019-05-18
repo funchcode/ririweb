@@ -20,6 +20,10 @@ public class Sales extends BaseTimeEntity {
 
     @NotNull
     @Column(nullable = false)
+    private long clientNo;
+
+    @NotNull
+    @Column(nullable = false)
     private long staffNo;
 
     @NotNull

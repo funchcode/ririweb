@@ -29,7 +29,7 @@ public class Reservation extends BaseTimeEntity {
 
     @NotNull
     @Column(nullable = false)
-    private long serviceNo;
+    private long reservationListNo;
 
     private LocalDateTime time;
 

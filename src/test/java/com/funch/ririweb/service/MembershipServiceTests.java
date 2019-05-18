@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+/*
+    회원권 등록, 회원권 사용안함
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class MembershipServiceTests {

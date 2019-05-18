@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+/*
+    카테고리 등록, 카테고리 가져오기, 카테고리 사용안함
+*/
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CategoryServiceTests {

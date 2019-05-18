@@ -10,8 +10,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
 @Getter
 public class Staff extends BaseTimeEntity {
     @Id
@@ -37,4 +35,17 @@ public class Staff extends BaseTimeEntity {
     private LocalDate careerDate;
 
     private char certificate;
+
+    @Builder
+    private Staff(String name, LocalDate birthday, String part, String state, String phone,
+                    LocalDate startDate, LocalDate resignationDate, char certificate) {
+        this.name = name;
+        this.birthday = birthday;
+        this.part = part;
+        this.state = state;
+        this.phone = phone;
+        this.startDate = startDate;
+        this.resignationDate = resignationDate;
+        this.certificate = certificate;
+    }
 }
