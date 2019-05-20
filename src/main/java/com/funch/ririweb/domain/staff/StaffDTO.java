@@ -11,11 +11,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class StaffDTO {
     private String name, phone, part, state;
-    private LocalDate startDate, resignationDate;
+    private LocalDate birthday, startDate, resignationDate;
     private char certificate;
 
     public Staff toEntity() {
-        return Staff.builder().name(name).phone(phone).part(part).state(state)
+        return Staff.builder().name(name).phone(phone).part(part).state(state).birthday(birthday)
                 .startDate(startDate).resignationDate(resignationDate).certificate(certificate).build();
     }
 }

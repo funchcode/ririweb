@@ -1,0 +1,65 @@
+{{#> layouts/base}}
+    {{#* inline "content"}}
+        <form id="enroll">
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">제품명</span>
+                        </div>
+                        <input id="name" type="text" class="form-control" placeholder="제품 명" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">업체명</span>
+                        </div>
+                        <input id="company" type="text" class="form-control" placeholder="업체 명">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">입고금액</span>
+                        </div>
+                        <input id="in-price" type="text" class="form-control" placeholder="입고금액">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">판매금액</span>
+                        </div>
+                        <input id="sale-price" type="text" class="form-control" placeholder="판매금액">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">재고</span>
+                        </div>
+                        <input id="stock" type="number" class="form-control" placeholder="재고 수량" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">메모</span>
+                        </div>
+                        <input id="memo" type="text" class="form-control" placeholder="메모">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark">등록</button>
+        </form>
+    {{/inline}}
+
+    {{#* inline "footer"}}
+        <script src="/js/product.js"></script>
+    {{/inline}}
+{{/layouts/base}}

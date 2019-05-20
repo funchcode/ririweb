@@ -20,8 +20,6 @@ public class ClientService {
         Client origin = clientRepository.findByNameAndPhone(client.getName(), client.getPhone());
         if(origin == null) {
             clientRepository.save(client);
-        }else {
-
         }
     }
 

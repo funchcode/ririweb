@@ -13,9 +13,8 @@ public class ClientRestController {
     private ClientService clientService;
 
     @PostMapping("/enroll")
-    public String insertClient(@RequestBody ClientDTO client) {
+    public void insertClient(@RequestBody ClientDTO client) {
         clientService.enroll(client.toEntity());
-        return "redirect:";
     }
 
     @PostMapping("/modify")

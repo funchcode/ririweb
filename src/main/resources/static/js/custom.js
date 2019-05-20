@@ -22,11 +22,6 @@ $("#enroll").submit(function (e){
         custom_email= email1.val() + "@" + email2.val();
     }
 
-    console.log(custom_birthday);
-    console.log(custom_email);
-
-    console.log("고객의 성별은 " + custom_gender);
-    console.log("직원 " + custom_staff);
     const sendJson = {
         name : custom_name,
         birthday : custom_birthday,

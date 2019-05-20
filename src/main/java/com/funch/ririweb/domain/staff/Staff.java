@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 public class Staff extends BaseTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long staffNo;
 
     @NotNull

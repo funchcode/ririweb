@@ -16,10 +16,13 @@ public class StaffService {
     /*직원등록*/
     @Transactional
     public void enroll(Staff staff) {
-
+        Staff origin = staffRepository.findByNameAndPhone(staff.getName(), staff.getPhone());
+        if(origin==null) {
+            staffRepository.save(staff);
+        }
     }
 
-    /*직원정보수정*/
+    /*직원정보수정 [퇴사 시에 퇴사 일 자동 등록]*/
     @Transactional
     public void modify(Staff staff) {
 

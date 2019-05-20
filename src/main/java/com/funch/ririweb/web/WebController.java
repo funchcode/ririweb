@@ -13,12 +13,16 @@ public class WebController {
     }
 
     @GetMapping("/custom")
-    public String custom() {
-        return "layouts/pages/custom";
-    }
+    public String custom() { return "layouts/pages/custom"; }
 
     @GetMapping("/staff")
     public String staff() {
         return "layouts/pages/staff";
     }
+
+    @GetMapping("/product")
+    public String product() { return "layouts/pages/product"; }
+
+    @GetMapping("/services")
+    public String services() { return "layouts/pages/services"; }
 }

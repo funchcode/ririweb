@@ -1,0 +1,82 @@
+{{#> layouts/base }}
+    {{#* inline "content" }}
+        <button id="category" type="button" class="btn btn-warning">1차 분류</button>
+        <button id="category" type="button" class="btn btn-warning">2차 분류</button>
+
+        <form id="category-enroll">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">1차 분류 명</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="카테고리 명" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">사용유무</span>
+                        </div>
+                        <select id="disabledSelect" class="form-control" disabled>
+                            <option value="y" selected disabled>사용</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">등록</button>
+                </div>
+            </div>
+        </form>
+
+        <form id="services-enroll">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">1차 분류</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="0" selected>선택안함</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">서비스 명</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="서비스 명" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">서비스 금액</label>
+                        </div>
+                        <input type="number" class="form-control" placeholder="서비스 가격" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">사용유무</span>
+                        </div>
+                        <select id="disabledSelect" class="form-control" disabled>
+                            <option value="y" selected disabled>사용</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">등록</button>
+                </div>
+            </div>
+        </form>
+    {{/inline}}
+
+    {{#* inline "footer" }}
+        <script src="/js/services.js"></script>
+    {{/inline}}
+{{/layouts/base}}

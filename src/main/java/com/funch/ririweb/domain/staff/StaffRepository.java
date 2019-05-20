@@ -11,4 +11,5 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public interface StaffRepository extends JpaRepository<Staff, Long> {
+    Staff findByNameAndPhone(String name, String phone);
 }

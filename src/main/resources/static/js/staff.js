@@ -20,9 +20,28 @@ $("#enroll").submit(function(e) {
         staff_start = start_year.value + "-" + start_month.value + "-" + start_day.value;
     }
 
-    console.log("생일 " + staff_birth);
-    console.log("근무시작 " + staff_start);
+    const sendJson = {
+        name : staff_name,
+        phone : staff_phone,
+        part : staff_part,
+        certificate : staff_certificate,
+        state : staff_state,
+        birthday : staff_birth,
+        startDate : staff_start
+    };
 
+    $.ajax({
+        type: "POST",
+        url: "/staff/enroll",
+        data: JSON.stringify(sendJson),
+        contentType: "application/json",
+        success: function(s) {
+            location.href = '/';
+        },
+        error: function(e) {
+
+        }
+    });
 });
 
 $("#start-year").blur(function(e) {

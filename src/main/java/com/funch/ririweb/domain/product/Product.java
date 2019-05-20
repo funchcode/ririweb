@@ -16,12 +16,14 @@ import java.time.LocalTime;
 @Builder
 public class Product extends BaseTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long productNo;
 
     @NotNull
     @Column(nullable = false)
     private String name;
+
+    private String company;
 
     private double inPrice;
 
