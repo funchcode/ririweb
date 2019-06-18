@@ -23,15 +23,11 @@ public class CategoryServiceTests {
     @Test
     public void 카테고리_등록_테스트() {
         // given
-        Category category = Category.builder().name("패디").useYn('Y').build();
-        List<Category> result;
 
         // when
-        categoryRepository.save(category);
-        result = categoryRepository.findAll();
 
         // then
-        Assert.assertEquals(result.get(0).getName(), category.getName());
+
     }
 
     @Test
@@ -59,5 +55,28 @@ public class CategoryServiceTests {
 
         // then
         Assert.assertEquals(result.size(), 1);
+    }
+
+    @Test
+    public void 카테고리_중복항목_불러오기() {
+        // given
+
+        // when
+
+        // then
+    }
+
+    @Test
+    public void 사용하는_카테고리_불러오기() {
+        // given
+        List<Category> lists;
+        Category category;
+
+        // when
+        lists = categoryRepository.findAllByUseYnEquals('Y');
+        category = lists.get(0);
+
+        // then
+        Assert.assertEquals(category.getName(), "패디");
     }
 }

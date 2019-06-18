@@ -6,23 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--bootstrap css-->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
-    <!-- 네비게이션 -->
+    <!--<div class="container-fluid" style="height: 8%;">
+        <div class="row">
 
-    <!-- 페이지마다 내용 -->
-    {{#> content}}
+        </div>
+    </div>-->
+    <div class="h-100 container-fluid">
+        <div class="h-100 row">
+            <!-- Start Category Layout -->
+            <div class="h-100 col-2 category">
+                <div class="h-100">
+                    <div class=" btn-group-vertical" role="group">
+                        <button type="button" id="" class="btn category-btn" onclick="location.href='/'">Home</button>
+                        <div class="category-line"></div>
+                        <button type="button" id="customer" class="btn category-btn">고객</button>
+                        <div class="category-line"></div>
+                        <button type="button" id="staff" class="btn category-btn">직원</button>
+                        <div class="category-line"></div>
+                        <button type="button" id="product" class="btn category-btn">상품</button>
+                        <div class="category-line"></div>
+                        <button type="button" id="services" class="btn category-btn">서비스</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Category layout-->
 
-    {{/content}}
+            <div class="col-10 container">
+                <!-- Start Navigation -->
+                <div class="row navigation">
+                    <div class="col-sm">
+                        리리 네일 살롱
+                    </div>
+                    <div class="col-sm">
+                        검색
+                    </div>
+                    <div class="col-sm">
+                        여기는 뭐하지
+                    </div>
+                </div>
+                <!-- End Navigation -->
 
+                <!-- Start Page Content -->
+                <div class="content">
+                {{#> content}}
 
+                {{/content}}
+                </div>
+                <!-- End Page Content -->
+            </div>
+        </div>
+    </div>
     <!--jquery js-->
     <script src="/lib/jquery-3.4.1.min.js"></script>
     <!--bootstrap js-->
     <script src="/lib/popper.min.js"></script>
     <script src="/lib/bootstrap.min.js"></script>
     <!--custom js-->
-    <script src="/js/common.js"></script>
+    <script src="/js/base.js"></script>
+    <!--<script src="/js/common.js"></script>-->
     {{#> footer}}
 
     {{/footer}}

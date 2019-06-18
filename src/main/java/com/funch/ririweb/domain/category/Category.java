@@ -10,8 +10,6 @@ import java.time.LocalTime;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
 @Getter
 public class Category extends BaseTimeEntity {
     @Id
@@ -26,4 +24,10 @@ public class Category extends BaseTimeEntity {
     @NotNull
     @Column(nullable = false)
     private char useYn;
+
+    @Builder
+    private Category(String name, char useYn) {
+        this.name = name;
+        this.useYn = useYn;
+    }
 }

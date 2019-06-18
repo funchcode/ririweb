@@ -11,8 +11,6 @@ import java.time.LocalTime;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
 @Getter
 @Table(name = "SERVICE")
 public class Services extends BaseTimeEntity {
@@ -34,4 +32,12 @@ public class Services extends BaseTimeEntity {
     @NotNull
     @Column(nullable = false)
     private char useYn;
+
+    @Builder
+    private Services(long categoryNo, String name, double price, char useYn) {
+        this.categoryNo = categoryNo;
+        this.name = name;
+        this.price = price;
+        this.useYn = useYn;
+    }
 }

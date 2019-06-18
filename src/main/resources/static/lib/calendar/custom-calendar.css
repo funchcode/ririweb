@@ -1,0 +1,47 @@
+.calendar-grid tr {
+    border-bottom: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+}
+
+.calendar-grid tr td {
+    min-width: 100px;
+}
+
+.calendar-week td {
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    //background-color: lavenderblush;
+    background-color: lightpink;
+}
+
+.calendar-days td {
+    height: 100px;
+    border-left: 1px solid darkgray;
+}
+
+.calendar-cell {
+    height: 100%;
+}
+
+.calendar-cell-days {
+    padding-left: 5%;
+    height: 20%;
+}
+
+.calendar-cell-contents {
+    height: 80%;
+}
+
+.calendar-cell-now {
+    background-color: lightpink;
+}
+
+.calendar-cell-before {
+    background-color: ivory;
+}
+
+.calendar-title {
+    font-weight: bold;
+}

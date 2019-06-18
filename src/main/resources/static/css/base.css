@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #f6f6f6 ;
+}
+
+/* Start Category */
+.category {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f5c6cb;
+}
+
+.category-line {
+    width: 90%;
+}
+
+.category-menus {
+    position: relative;
+    display: block;
+
+}
+
+.category-btn {
+    font-weight: bold;
+}
+/* End Category */
+
+/* Start Navigation */
+.navigation {
+    background-color: white;
+    height: 6%;
+}
+/* End Navigation */

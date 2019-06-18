@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ServicesRepository extends JpaRepository<Services, Long> {
     List<Services> findByCategoryNoOrderByServiceNoAsc(long categoryNo);
+    Services findTopByCategoryNoAndName(long categoryNo, String name);
 }
