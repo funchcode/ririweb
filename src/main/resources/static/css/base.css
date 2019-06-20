@@ -19,10 +19,18 @@ html, body {
     width: 90%;
 }
 
-.category-menus {
-    position: relative;
-    display: block;
 
+.category-logo {
+    height: 50px;
+}
+
+.category-menus {
+    margin-top: 5%;
+}
+
+.category-parent-menu {
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .category-btn {

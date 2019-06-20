@@ -19,16 +19,38 @@
             <!-- Start Category Layout -->
             <div class="h-100 col-2 category">
                 <div class="h-100">
-                    <div class=" btn-group-vertical" role="group">
-                        <button type="button" id="" class="btn category-btn" onclick="location.href='/'">Home</button>
-                        <div class="category-line"></div>
-                        <button type="button" id="customer" class="btn category-btn">고객</button>
-                        <div class="category-line"></div>
-                        <button type="button" id="staff" class="btn category-btn">직원</button>
-                        <div class="category-line"></div>
-                        <button type="button" id="product" class="btn category-btn">상품</button>
-                        <div class="category-line"></div>
-                        <button type="button" id="services" class="btn category-btn">서비스</button>
+                    <div class="row category-logo">
+                        <div class="col" style="text-align: center;">
+                            <img class="logo" src="/images/ririshop-logo.png" style="height: 50px;" alt="리리샵 로고">
+                        </div>
+                    </div>
+                    <div class="row category-menus" onclick="location.href='/'">
+                        <div class="col-4 align-self-start">아이콘</div>
+                        <div class="col-8 align-self-center category-parent-menu">홈</div>
+                    </div>
+
+                    <div class="row category-menus">
+                        <div class="col-4 align-self-start">아이콘</div>
+                        <div class="col-8 align-self-center category-parent-menu">서비스</div>
+                    </div>
+
+                    <div class="row category-child">
+                        <div class="col align-self-center category-child-menu">서비스</div>
+                    </div>
+
+                    <div class="row category-menus">
+                        <div class="col-4 align-self-start">아이콘</div>
+                        <div class="col-8 align-self-center category-parent-menu">고객</div>
+                    </div>
+
+                    <div class="row category-menus">
+                        <div class="col-4 align-self-start">아이콘</div>
+                        <div class="col-8 align-self-center category-parent-menu">직원</div>
+                    </div>
+
+                    <div class="row category-menus">
+                        <div class="col-4 align-self-start">아이콘</div>
+                        <div class="col-8 align-self-center category-parent-menu">매출</div>
                     </div>
                 </div>
             </div>
