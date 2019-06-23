@@ -28,6 +28,10 @@ html, body {
     margin-top: 5%;
 }
 
+.category-child-menu {
+    list-style-type: none;
+}
+
 .category-parent-menu {
     font-size: 25px;
     font-weight: bold;
