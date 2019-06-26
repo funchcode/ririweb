@@ -10,30 +10,22 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
-@Getter
 public class Reservation extends BaseTimeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long reservationNo;
 
-    @NotNull
-    @Column(nullable = false)
-    private long clientNo;
+    private LocalDateTime visitTime;
 
-    @NotNull
-    @Column(nullable = false)
+    private LocalDateTime finishTime;
+
+    private long cserviceHistoryNo;
+
     private long staffNo;
 
-    @NotNull
-    @Column(nullable = false)
-    private long reservationListNo;
+    private long guestNo;
 
-    private LocalDateTime time;
+    private long commonCodeNo;
 
-    private String state;
-
-    private String memo;
 }

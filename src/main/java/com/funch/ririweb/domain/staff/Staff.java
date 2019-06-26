@@ -9,43 +9,34 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Getter
 public class Staff extends BaseTimeEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long staffNo;
 
-    @NotNull
-    @Column(nullable = false)
     private String name;
-
-    private LocalDate birthday;
 
     private String phone;
 
-    private String part;
+    private char gender;
 
-    private String state;
+    private LocalDate birthday;
 
-    private LocalDate startDate;
+    private String address;
 
-    private LocalDate resignationDate;
+    private String email;
 
-    private LocalDate careerDate;
+    private char marriage;
 
-    private char certificate;
+    private int part;
 
-    @Builder
-    private Staff(String name, LocalDate birthday, String part, String state, String phone,
-                    LocalDate startDate, LocalDate resignationDate, char certificate) {
-        this.name = name;
-        this.birthday = birthday;
-        this.part = part;
-        this.state = state;
-        this.phone = phone;
-        this.startDate = startDate;
-        this.resignationDate = resignationDate;
-        this.certificate = certificate;
-    }
+    private int career;
+
+    private char license;
+
+    private String memo;
+
+    private LocalDate hiredDay;
+
 }
