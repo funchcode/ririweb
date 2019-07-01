@@ -4,15 +4,19 @@ html, body {
     padding: 0;
 }
 
+body {
+    background-image: url('/images/ririweb-background.jpg');
+}
+
 .container {
-    background-color: #f6f6f6 ;
+    /*background-color: #f6f6f6 ;*/
 }
 
 /* Start Category */
 .category {
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #f5c6cb;
+    background-color: rgb(255,255,255,0.5);
 }
 
 .category-line {
@@ -44,7 +48,7 @@ html, body {
 
 /* Start Navigation */
 .navigation {
-    background-color: white;
-    height: 6%;
+    background-color: rgb(255,255,255,0.5);
+    height: 30px;
 }
 /* End Navigation */
