@@ -1,7 +1,9 @@
 package com.funch.ririweb.domain.creditor;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,7 +11,8 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "CREDITOR")
 @NoArgsConstructor
-public class Creditor extends BaseTimeEntity {
+@Getter
+public final class Creditor extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,33 +30,9 @@ public class Creditor extends BaseTimeEntity {
 
     private String memo;
 
-    public long getCreditorNo() {
-        return this.creditorNo;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setUsed(char used) {
-        this.used = used;
-    }
-
-    public void setMemo(String memo) {
-        this.memo = memo;
-    }
-
     public static class Builder {
 
-        private String name;
+        private final String name;
         private String supplier;
         private String phone;
         private char used;
@@ -61,6 +40,7 @@ public class Creditor extends BaseTimeEntity {
 
         public Builder(String name) {
             this.name = name;
+            this.used = 'y';
         }
 
         public Builder supplier(String val) {
