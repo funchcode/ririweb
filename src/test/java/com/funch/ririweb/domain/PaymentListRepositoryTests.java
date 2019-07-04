@@ -2,8 +2,8 @@ package com.funch.ririweb.domain;
 
 import com.funch.ririweb.domain.goods.Goods;
 import com.funch.ririweb.domain.goods.GoodsRepository;
-import com.funch.ririweb.domain.guests.Guest;
-import com.funch.ririweb.domain.guests.GuestRepository;
+import com.funch.ririweb.domain.payments.list.PaymentList;
+import com.funch.ririweb.domain.payments.list.PaymentListRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,11 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class GuestRepositoryTests {
+@RunWith(SpringRunner.class)
+public class PaymentListRepositoryTests {
+
+
     @Autowired
-    private GuestRepository guestRepository;
+    private PaymentListRepository paymentListRepository;
 
     @Before
     public void 전처리() {
@@ -25,20 +27,22 @@ public class GuestRepositoryTests {
     }
 
     @Test
-    public void 고객_등록() {
+    public void 상품_등록() {
         // TODO given
-        Guest guest = new Guest.Builder("김말큐", "010-0000-0000").build();
+        PaymentList paymentList = new PaymentList.Builder(1000, 1300, 1, 1)
+                .goodFk(1).build();
 
         // TODO when
-        guestRepository.save(guest);
-        Guest recentData = guestRepository.findTopByOrderByGuestPkDesc();
+        paymentListRepository.save(paymentList);
+        PaymentList recentData = paymentListRepository.findTopByOrderByHisListPkDesc();
 
         // TODO then
-        Assert.assertEquals(guest.getGuestNm(), recentData.getGuestNm());
+        Assert.assertEquals(paymentList.getCreatedAt(), recentData.getCreatedAt());
     }
 
     @After
     public void 후처리() {
 
     }
+
 }

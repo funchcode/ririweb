@@ -1,6 +1,7 @@
 package com.funch.ririweb.service;
 
-import com.funch.ririweb.domain.creditor.CreditorDTO;
+
+import com.funch.ririweb.domain.goods.CreditorDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

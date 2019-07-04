@@ -1,7 +1,10 @@
 package com.funch.ririweb.domain;
 
+
 import com.funch.ririweb.domain.goods.Creditor;
 import com.funch.ririweb.domain.goods.CreditorRepository;
+import com.funch.ririweb.domain.services.ServiceChild;
+import com.funch.ririweb.domain.services.ServiceChildRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,12 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.xml.ws.Service;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CreditorRepositoryTests {
+public class ServiceChildRepositoryTests {
 
     @Autowired
-    private CreditorRepository creditorRepository;
+    private ServiceChildRepository serviceChildRepository;
 
     @Before
     public void 전처리() {
@@ -26,20 +31,20 @@ public class CreditorRepositoryTests {
     @Test
     public void 매입처_등록() {
         // TODO given
-        Creditor creditor = new Creditor.Builder("VERY GOOD NAIL")
-                .supplier("김모씨").phone("010-0000-0000").memo("저렴하다.").build();
+        ServiceChild serviceChild = new ServiceChild(
+            1, "젤네일", 50000
+        ).setMemo("여름");
 
         // TODO when
-        creditorRepository.save(creditor);
-        Creditor recentData = creditorRepository.findTopByOrderByCreditorPkDesc();
+        serviceChildRepository.save(serviceChild);
+        ServiceChild recentData = serviceChildRepository.findTopByOrderByChildPkDesc();
 
         // TODO then
-        Assert.assertEquals(creditor.getCreditorNm(), recentData.getCreditorNm());
+        Assert.assertEquals(serviceChild.getChildNm(), recentData.getChildNm());
     }
 
     @After
     public void 후처리() {
 
     }
-
 }

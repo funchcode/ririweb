@@ -1,25 +1,26 @@
 package com.funch.ririweb.domain.goods;
 
+import com.funch.ririweb.domain.commons.UseType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @NoArgsConstructor
-public class GoodsDTO {
+@Setter
+@Getter
+public final class GoodsDTO {
 
-    private String name;
+    private String goodNm;
     private int purchasePrice;
     private int sellingPrice;
-    private int stocks;
-    private char used;
+    private int stock;
+    private UseType usedGb;
     private String memo;
-    private long creditorNo;
+    private int creditorFk;
 
-    private Goods toEntity() {
-        return new Goods(creditorNo, name, purchasePrice, sellingPrice, stocks)
-                .setMemo(memo).setUsed(used);
+    public Goods toEntity() {
+        return new Goods(goodNm, purchasePrice, sellingPrice
+        , stock, memo, creditorFk).setUsedGb(usedGb);
     }
 
 }

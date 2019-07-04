@@ -2,8 +2,6 @@ package com.funch.ririweb.domain;
 
 import com.funch.ririweb.domain.goods.Goods;
 import com.funch.ririweb.domain.goods.GoodsRepository;
-import com.funch.ririweb.domain.guests.Guest;
-import com.funch.ririweb.domain.guests.GuestRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,9 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GuestRepositoryTests {
+public class GoodRepositoryTests {
+
     @Autowired
-    private GuestRepository guestRepository;
+    private GoodsRepository goodRepository;
 
     @Before
     public void 전처리() {
@@ -25,20 +24,21 @@ public class GuestRepositoryTests {
     }
 
     @Test
-    public void 고객_등록() {
+    public void 상품_등록() {
         // TODO given
-        Guest guest = new Guest.Builder("김말큐", "010-0000-0000").build();
+        Goods good = new Goods("젤", 1000, 1500, 20, "끈적임", 2);
 
         // TODO when
-        guestRepository.save(guest);
-        Guest recentData = guestRepository.findTopByOrderByGuestPkDesc();
+        goodRepository.save(good);
+        Goods recentData = goodRepository.findTopByOrderByGoodPkDesc();
 
         // TODO then
-        Assert.assertEquals(guest.getGuestNm(), recentData.getGuestNm());
+        Assert.assertEquals(good.getGoodNm(), recentData.getGoodNm());
     }
 
     @After
     public void 후처리() {
 
     }
+
 }

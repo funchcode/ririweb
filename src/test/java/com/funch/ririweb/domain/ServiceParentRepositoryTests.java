@@ -1,9 +1,10 @@
 package com.funch.ririweb.domain;
 
+
 import com.funch.ririweb.domain.goods.Goods;
 import com.funch.ririweb.domain.goods.GoodsRepository;
-import com.funch.ririweb.domain.guests.Guest;
-import com.funch.ririweb.domain.guests.GuestRepository;
+import com.funch.ririweb.domain.services.ServiceParent;
+import com.funch.ririweb.domain.services.ServiceParentRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,9 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GuestRepositoryTests {
+public class ServiceParentRepositoryTests {
     @Autowired
-    private GuestRepository guestRepository;
+    private ServiceParentRepository serviceParentRepository;
 
     @Before
     public void 전처리() {
@@ -25,20 +26,21 @@ public class GuestRepositoryTests {
     }
 
     @Test
-    public void 고객_등록() {
+    public void 상품_등록() {
         // TODO given
-        Guest guest = new Guest.Builder("김말큐", "010-0000-0000").build();
+        ServiceParent serviceParent = new ServiceParent("패디");
 
         // TODO when
-        guestRepository.save(guest);
-        Guest recentData = guestRepository.findTopByOrderByGuestPkDesc();
+        serviceParentRepository.save(serviceParent);
+        ServiceParent recentData = serviceParentRepository.findTopByOrderByParentPkDesc();
 
         // TODO then
-        Assert.assertEquals(guest.getGuestNm(), recentData.getGuestNm());
+        Assert.assertEquals(serviceParent.getParentNm(), recentData.getParentNm());
     }
 
     @After
     public void 후처리() {
 
     }
+
 }

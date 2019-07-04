@@ -1,7 +1,9 @@
 package com.funch.ririweb.domain;
 
-import com.funch.ririweb.domain.staff.Staff;
-import com.funch.ririweb.domain.staff.StaffRepository;
+import com.funch.ririweb.domain.goods.Goods;
+import com.funch.ririweb.domain.goods.GoodsRepository;
+import com.funch.ririweb.domain.staffs.Staff;
+import com.funch.ririweb.domain.staffs.StaffRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +17,9 @@ import java.time.LocalDate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public final class StaffRepositoryTests {
+public class StaffRepositoryTests {
+
+
     @Autowired
     private StaffRepository staffRepository;
 
@@ -26,20 +30,21 @@ public final class StaffRepositoryTests {
 
     @Test
     public void 직원_등록() {
-        // TODO given ( part : 임시데이터[0] )
-        Staff staff = new Staff.Builder("T E S T 0", "010-0000-0000", 0, LocalDate.now())
-                .build();
+        // TODO given
+        Staff staff = new Staff.Builder("김직원", "010-0000-0000", LocalDate.now()).build();
 
         // TODO when
         staffRepository.save(staff);
-        Staff recent = staffRepository.findTopByName(staff.getName());
+        Staff recentData = staffRepository.findTopByOrderByStaffPkDesc();
 
         // TODO then
-        Assert.assertEquals(staff.getName(), recent.getName());
+        Assert.assertEquals(staff.getHiredDay(), recentData.getHiredDay());
     }
 
     @After
     public void 후처리() {
 
     }
+
+
 }
