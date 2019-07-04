@@ -1,6 +1,6 @@
 package com.funch.ririweb.domain.goodshistory;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

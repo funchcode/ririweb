@@ -1,6 +1,6 @@
 package com.funch.ririweb.domain.common;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

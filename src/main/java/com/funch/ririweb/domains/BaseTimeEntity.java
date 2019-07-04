@@ -1,4 +1,4 @@
-package com.funch.ririweb.domain;
+package com.funch.ririweb.domains;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,10 +15,10 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseTimeEntity {
     @CreatedDate
-    @Column(name = "createdat")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updatedat")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }

@@ -1,6 +1,6 @@
 package com.funch.ririweb.domain.staff;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;

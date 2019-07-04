@@ -1,9 +1,8 @@
 package com.funch.ririweb.domain.creditor;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

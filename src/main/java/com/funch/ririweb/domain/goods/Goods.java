@@ -1,10 +1,8 @@
 package com.funch.ririweb.domain.goods;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 

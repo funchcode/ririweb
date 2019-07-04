@@ -1,21 +1,34 @@
 package com.funch.ririweb.domain.pservice;
 
-import com.funch.ririweb.domain.BaseTimeEntity;
+import com.funch.ririweb.domains.BaseTimeEntity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class PService extends BaseTimeEntity {
+@NoArgsConstructor
+@Getter
+@Table(name = "PSERVICE")
+public final class PService extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pserviceno")
     private long pserviceNo;
 
     private String pname;
 
     private char used;
+
+    public PService(String pname) {
+        this.pname = pname;
+        this.used = 'y';
+    }
+
+    PService setUsed(char used) {
+        this.used = used;
+        return this;
+    }
 
 }
