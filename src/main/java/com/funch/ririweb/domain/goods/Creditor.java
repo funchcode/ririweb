@@ -42,7 +42,7 @@ public final class Creditor extends BaseTimeEntity {
             /**
              * usedGb
              */
-            this.usedGb = UseType.ENABLED.getValue();
+            this.usedGb = "Y";
         }
 
         public Builder supplier(String val) {
@@ -55,8 +55,8 @@ public final class Creditor extends BaseTimeEntity {
             return this;
         }
 
-        public Builder useGb(UseType val) {
-            this.usedGb = val.getValue();
+        public Builder useGb(String val) {
+            this.usedGb = val;
             return this;
         }
 

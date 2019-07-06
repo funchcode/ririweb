@@ -16,6 +16,8 @@ public class CreditorServicesTest {
 
     @Autowired
     private CreditorRepository creditorRepository;
+    @Autowired
+    private CreditorService creditorService;
 
     @Before
     public void 전처리() {
@@ -24,7 +26,7 @@ public class CreditorServicesTest {
 
     @Test
     public void 매입처_등록() {
-
+        String name = "";
     }
 
     @After
