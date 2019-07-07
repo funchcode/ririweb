@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.goods;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.UseType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,8 +15,8 @@ public final class Goods extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int goodPk;
-    private String goodNm;
+    private int goodsPk;
+    private String goodsNm;
     private int purchasePrice;
     private int sellingPrice;
     private int stock;
@@ -24,8 +24,8 @@ public final class Goods extends BaseTimeEntity {
     private String memo;
     private int creditorFk;
 
-    public Goods(String goodNm, int purchasePrice, int sellingPrice, int stock, String memo, int creditorFk) {
-        this.goodNm = goodNm;
+    public Goods(String goodsNm, int purchasePrice, int sellingPrice, int stock, String memo, int creditorFk) {
+        this.goodsNm = goodsNm;
         this.purchasePrice = purchasePrice;
         this.sellingPrice = sellingPrice;
         this.stock = stock;
@@ -34,11 +34,11 @@ public final class Goods extends BaseTimeEntity {
         /**
          * usedGb
          */
-        this.usedGb = UseType.ENABLED.getValue();
+        this.usedGb = Code.USED_Y;
     }
 
-    public Goods setUsedGb(UseType usedGb) {
-        this.usedGb = usedGb.getValue();
+    public Goods setUsedGb(String usedGb) {
+        this.usedGb = usedGb;
         return this;
     }
 }

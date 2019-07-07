@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.memberships;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.UseType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,11 +28,11 @@ public final class Membership extends BaseTimeEntity {
         /**
          * Used_GB default
          */
-        this.usedGb = UseType.ENABLED.getValue();
+        this.usedGb = Code.USED_Y;
     }
 
-    public Membership setUsedGb(UseType val) {
-        this.usedGb = val.getValue();
+    public Membership setUsedGb(String val) {
+        this.usedGb = val;
         return this;
     }
 

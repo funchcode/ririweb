@@ -1,7 +1,5 @@
 package com.funch.ririweb.domain.guests;
 
-import com.funch.ririweb.domain.commons.AdType;
-import com.funch.ririweb.domain.commons.GenderType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,8 +13,8 @@ public final class GuestDTO {
 
     private String guestNm;
     private String phone;
-    private GenderType genderGb;
-    private AdType adGb;
+    private String genderGb;
+    private String adGb;
     private LocalDate birthday;
     private String memo;
     private int guestFk;

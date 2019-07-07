@@ -1,6 +1,5 @@
 package com.funch.ririweb.domain.services;
 
-import com.funch.ririweb.domain.commons.UseType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,7 @@ public final class ServiceChildDTO {
 
     private String childNm;
     private int price;
-    private UseType usedGb;
+    private String usedGb;
     private String memo;
     private int serviceParentFk;
 

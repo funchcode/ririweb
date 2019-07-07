@@ -18,4 +18,11 @@ public final class CommonCodeDTO {
         return new CommonCode(codeGb, codeNm, codeVal).setUsedGb(usedGb);
     }
 
+    public String toString() {
+        return "CodeGb : " + codeGb + ", " +
+                "CodeNm : " + codeNm + ", " +
+                "CodeVal : " + codeVal + ", " +
+                "UsedGb : " + usedGb;
+    }
+
 }

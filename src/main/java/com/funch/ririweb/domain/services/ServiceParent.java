@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.services;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.UseType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,11 +23,11 @@ public final class ServiceParent extends BaseTimeEntity {
         /**
          * usedGb default
          */
-        this.usedGb = UseType.ENABLED.getValue();
+        this.usedGb = Code.USED_Y;
     }
 
-    public ServiceParent setUsedGb(UseType val) {
-        this.usedGb = val.getValue();
+    public ServiceParent setUsedGb(String val) {
+        this.usedGb = val;
         return this;
     }
 }

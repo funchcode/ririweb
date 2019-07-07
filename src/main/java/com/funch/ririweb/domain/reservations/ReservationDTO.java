@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public final class ReservationDTO {
 
-    private StatusType reservationStGb;
+    private String reservationStGb;
     private LocalDateTime visitedTime;
     private LocalDateTime finishedTime;
     private int guestFk;

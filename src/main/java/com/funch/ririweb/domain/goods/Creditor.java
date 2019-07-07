@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.goods;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.UseType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -42,7 +42,7 @@ public final class Creditor extends BaseTimeEntity {
             /**
              * usedGb
              */
-            this.usedGb = "Y";
+            this.usedGb = Code.USED_Y;
         }
 
         public Builder supplier(String val) {

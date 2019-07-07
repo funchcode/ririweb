@@ -1,6 +1,5 @@
 package com.funch.ririweb.domain.goods;
 
-import com.funch.ririweb.domain.commons.UseType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

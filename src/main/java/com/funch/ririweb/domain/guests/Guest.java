@@ -1,8 +1,7 @@
 package com.funch.ririweb.domain.guests;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.AdType;
-import com.funch.ririweb.domain.commons.GenderType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -73,13 +72,13 @@ public final class Guest extends BaseTimeEntity {
             return this;
         }
 
-        public Builder adGb(AdType val) {
-            this.adGb = val.getValue();
+        public Builder adGb(String val) {
+            this.adGb = val;
             return this;
         }
 
-        public Builder genderGb(GenderType val) {
-            this.genderGb = val.getValue();
+        public Builder genderGb(String val) {
+            this.genderGb = val;
             return this;
         }
 
@@ -89,11 +88,11 @@ public final class Guest extends BaseTimeEntity {
             /**
              * AD_GB Default
              */
-            this.adGb = AdType.WALKING.getValue();
+            this.adGb = Code.AD_WALKING;
             /**
              * GENDER_GB Default
              */
-            this.genderGb = GenderType.WOMAN.getValue();
+            this.genderGb = Code.GENDER_WOMAN;
         }
     }
 }

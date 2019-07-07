@@ -1,4 +1,4 @@
-package com.funch.ririweb.domain;
+package com.funch.ririweb.creditors;
 
 import com.funch.ririweb.domain.goods.Creditor;
 import com.funch.ririweb.domain.goods.CreditorRepository;
@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -35,6 +37,22 @@ public class CreditorRepositoryTests {
 
         // TODO then
         Assert.assertEquals(creditor.getCreditorNm(), recentData.getCreditorNm());
+    }
+
+    @Test
+    public void 매입처_모두_가져오기() {
+        String usedGb = "YES";
+        List<Creditor> list = creditorRepository.findAllByUsedGbOrderByCreditorPkDesc(usedGb);
+
+        Assert.assertEquals(list.size(), 2);
+    }
+
+    @Test
+    public void 특정_매입처_가져오기() {
+        int creditorPk = 0;
+        Creditor creditor = creditorRepository.findByCreditorPk(creditorPk);
+
+        Assert.assertEquals(creditor, null);
     }
 
     @After

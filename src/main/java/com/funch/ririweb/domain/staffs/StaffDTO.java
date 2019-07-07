@@ -1,8 +1,5 @@
 package com.funch.ririweb.domain.staffs;
 
-import com.funch.ririweb.domain.commons.GenderType;
-import com.funch.ririweb.domain.commons.PartType;
-import com.funch.ririweb.domain.commons.WorkType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,9 +13,9 @@ public final class StaffDTO {
 
     private String staffNm;
     private String phone;
-    private GenderType genderGb;
-    private PartType partGb;
-    private WorkType workGb;
+    private String genderGb;
+    private String partGb;
+    private String workGb;
     private LocalDate birthday;
     private String address;
     private String email;

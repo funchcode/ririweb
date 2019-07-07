@@ -2,11 +2,11 @@ package com.funch.ririweb.service;
 
 
 import com.funch.ririweb.domain.goods.Creditor;
-import com.funch.ririweb.domain.goods.CreditorDTO;
 import com.funch.ririweb.domain.goods.CreditorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class CreditorService {
@@ -14,25 +14,36 @@ public class CreditorService {
     @Autowired
     private CreditorRepository creditorRepository;
 
-    // TODO 매입처 등록
     @Transactional
     public void enroll(Creditor creditor) {
         creditorRepository.save(creditor);
     }
 
-    // TODO 모든 매입처 가져오기
     @Transactional
-    public void getAll(CreditorDTO creditor) {
+    public List<Creditor> getAllByUsed(String usedGb) {
+        List<Creditor> list =
+                creditorRepository.findAllByUsedGbOrderByCreditorPkDesc(usedGb);
 
+        // TODO null 값 처리
+
+        return list;
     }
-    // TODO 하나의 매입처 가져오기
+
     @Transactional
-    public void getOne() {
+    public Creditor getOneByCreditorPk(int creditorPk) {
+        Creditor creditor = creditorRepository.findByCreditorPk(creditorPk);
 
+        // TODO null 값 처리
+
+        return creditor;
     }
 
-    // TODO 매입처 정보 수정
-    public void update() {
+    @Transactional
+    public void update(Creditor creditor) {
+        int originPk = creditor.getCreditorPk();
 
+        // TODO pk 값 처리
+
+        creditorRepository.save(creditor);
     }
 }

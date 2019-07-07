@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.reservations;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.StatusType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -56,8 +56,8 @@ public final class Reservation extends BaseTimeEntity {
             return this;
         }
 
-        public Builder reservationStGb(StatusType val) {
-            this.reservationStGb = val.getValue();
+        public Builder reservationStGb(String val) {
+            this.reservationStGb = val;
             return this;
         }
 
@@ -66,7 +66,7 @@ public final class Reservation extends BaseTimeEntity {
             /**
              * reservation GB default
              */
-            this.reservationStGb = StatusType.STANDBY.getValue();
+            this.reservationStGb = Code.STATUS_STANDBY;
         }
     }
 }

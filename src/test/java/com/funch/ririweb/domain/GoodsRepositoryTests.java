@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GoodRepositoryTests {
+public class GoodsRepositoryTests {
 
     @Autowired
-    private GoodsRepository goodRepository;
+    private GoodsRepository goodsRepository;
 
     @Before
     public void 전처리() {
@@ -29,11 +31,27 @@ public class GoodRepositoryTests {
         Goods good = new Goods("젤", 1000, 1500, 20, "끈적임", 2);
 
         // TODO when
-        goodRepository.save(good);
-        Goods recentData = goodRepository.findTopByOrderByGoodPkDesc();
+        goodsRepository.save(good);
+        Goods recentData = goodsRepository.findTopByOrderByGoodsPkDesc();
 
         // TODO then
-        Assert.assertEquals(good.getGoodNm(), recentData.getGoodNm());
+        Assert.assertEquals(good.getGoodsNm(), recentData.getGoodsNm());
+    }
+
+    @Test
+    public void 상품_가져오기() {
+        String usedGb = "YES";
+        List<Goods> list = goodsRepository.findAllByUsedGbOrderByGoodsPk(usedGb);
+
+        Assert.assertEquals(list.size(), 1);
+    }
+
+    @Test
+    public void 특정_상품_가져오기() {
+        int goodsPk = 0;
+        Goods goods = goodsRepository.findByGoodsPk(goodsPk);
+
+        Assert.assertEquals(goods, null);
     }
 
     @After

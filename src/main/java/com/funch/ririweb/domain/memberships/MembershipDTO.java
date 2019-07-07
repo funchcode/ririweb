@@ -13,7 +13,7 @@ public final class MembershipDTO {
     private String membershipNm;
     private int sellingPrice;
     private int chargePrice;
-    private UseType usedGb;
+    private String usedGb;
 
     public Membership toEntity() {
         return new Membership(membershipNm, sellingPrice, chargePrice).setUsedGb(usedGb);

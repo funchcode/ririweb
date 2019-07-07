@@ -12,7 +12,7 @@ public final class PaymentDTO {
 
     private int card;
     private int cash;
-    private ReceiptType receiptStGb;
+    private String receiptStGb;
     private int primeCost;
     private int discountRate;
     private int paymentCost;

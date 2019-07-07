@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.payments;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.ReceiptType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -72,8 +72,8 @@ public final class Payment extends BaseTimeEntity {
             return this;
         }
 
-        public Builder receiptStGb(ReceiptType val) {
-            this.receiptStGb = val.getValue();
+        public Builder receiptStGb(String val) {
+            this.receiptStGb = val;
             return this;
         }
 
@@ -93,7 +93,7 @@ public final class Payment extends BaseTimeEntity {
             /**
              * receiptStGb default
              */
-            this.receiptStGb = ReceiptType.NO.getValue();
+            this.receiptStGb = Code.RECEIPT_N;
             this.discountRate = 0;
         }
     }

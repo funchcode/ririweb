@@ -1,9 +1,7 @@
 package com.funch.ririweb.domain.staffs;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.GenderType;
-import com.funch.ririweb.domain.commons.PartType;
-import com.funch.ririweb.domain.commons.WorkType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.tomcat.jni.Local;
@@ -95,18 +93,18 @@ public final class Staff extends BaseTimeEntity {
             return this;
         }
 
-        public Builder workGb(WorkType val) {
-            workGb = val.getValue();
+        public Builder workGb(String val) {
+            workGb = val;
             return this;
         }
 
-        public Builder partGb(PartType val) {
-            partGb = val.getValue();
+        public Builder partGb(String val) {
+            partGb = val;
             return this;
         }
 
-        public Builder genderGb(GenderType val) {
-            genderGb = val.getValue();
+        public Builder genderGb(String val) {
+            genderGb = val;
             return this;
         }
 
@@ -117,15 +115,15 @@ public final class Staff extends BaseTimeEntity {
             /**
              * genderGB default
              */
-            this.genderGb = GenderType.WOMAN.getValue();
+            this.genderGb = Code.GENDER_WOMAN;
             /**
              * partGB default
              */
-            this.partGb = PartType.NAIL.getValue();
+            this.partGb = Code.PART_NAIL;
             /**
              * workGB default
              */
-            this.workGb = WorkType.WORK.getValue();
+            this.workGb = Code.WORK_IN;
         }
     }
 

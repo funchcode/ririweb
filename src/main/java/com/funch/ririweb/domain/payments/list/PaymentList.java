@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.payments.list;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
-import com.funch.ririweb.domain.commons.StatusType;
+import com.funch.ririweb.domain.commons.Code;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -72,7 +72,7 @@ public final class PaymentList extends BaseTimeEntity {
             this.reservationFk = reservationFk;
             this.staffFk = staffFk;
             this.amount = 1;
-            this.paymentStGb = StatusType.STANDBY.getValue();
+            this.paymentStGb = Code.STATUS_STANDBY;
         }
     }
 }
