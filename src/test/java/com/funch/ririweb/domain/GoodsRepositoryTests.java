@@ -48,7 +48,7 @@ public class GoodsRepositoryTests {
 
     @Test
     public void 특정_상품_가져오기() {
-        int goodsPk = 0;
+        int goodsPk = 1;
         Goods goods = goodsRepository.findByGoodsPk(goodsPk);
 
         Assert.assertEquals(goods, null);

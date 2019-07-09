@@ -1,6 +1,5 @@
 package com.funch.ririweb.domain.payments;
 
-import com.funch.ririweb.domain.commons.ReceiptType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

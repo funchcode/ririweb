@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GuestRepositoryTests {
@@ -35,6 +37,24 @@ public class GuestRepositoryTests {
 
         // TODO then
         Assert.assertEquals(guest.getGuestNm(), recentData.getGuestNm());
+    }
+
+    @Test
+    public void 고객_모두_가져오기() {
+        List<Guest> list
+                = guestRepository.findAllByOrderByGuestPkDesc();
+
+        Assert.assertNotEquals(list, null);
+    }
+
+    @Test
+    public void 특정_고객_가져오기() {
+        int guestPk = 3;
+
+        Guest guest =
+                guestRepository.findByGuestPk(guestPk);
+
+        Assert.assertNotEquals(guest, null);
     }
 
     @After

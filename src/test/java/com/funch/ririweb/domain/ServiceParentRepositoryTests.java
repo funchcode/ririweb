@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ServiceParentRepositoryTests {
@@ -26,7 +28,7 @@ public class ServiceParentRepositoryTests {
     }
 
     @Test
-    public void 상품_등록() {
+    public void 서비스_등록() {
         // TODO given
         ServiceParent serviceParent = new ServiceParent("패디");
 
@@ -36,6 +38,24 @@ public class ServiceParentRepositoryTests {
 
         // TODO then
         Assert.assertEquals(serviceParent.getParentNm(), recentData.getParentNm());
+    }
+
+    @Test
+    public void 서비스_모두_가져오기() {
+        String usedGb = "";
+        List<ServiceParent> list
+                = serviceParentRepository.findAllByUsedGbOrderByParentPkDesc(usedGb);
+
+        Assert.assertNotEquals(list, null);
+    }
+
+    @Test
+    public void 서비스_가져오기() {
+        int parentPk = 2;
+        ServiceParent parent =
+                serviceParentRepository.findByParentPk(parentPk);
+
+        Assert.assertNotEquals(parent, null);
     }
 
     @After

@@ -1,6 +1,5 @@
 package com.funch.ririweb.domain.reservations;
 
-import com.funch.ririweb.domain.commons.StatusType;
 
 import java.time.LocalDateTime;
 

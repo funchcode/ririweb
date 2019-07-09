@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MembershipRepositoryTests {
@@ -35,6 +37,26 @@ public class MembershipRepositoryTests {
 
         // TODO then
         Assert.assertEquals(membership.getMembershipNm(), recentData.getMembershipNm());
+    }
+
+    @Test
+    public void 회원권_모두_가져오기() {
+        String usedGb = "YES";
+
+        List<Membership> list =
+                membershipRepository.findAllByUsedGbOrderByMembershipPkDesc(usedGb);
+
+        Assert.assertNotEquals(list, null);
+    }
+
+    @Test
+    public void 회원권_가져오기() {
+        int membershipPk = 1;
+
+        Membership mbs =
+                membershipRepository.findByMembershipPk(membershipPk);
+
+        Assert.assertNotEquals(mbs, null);
     }
 
     @After

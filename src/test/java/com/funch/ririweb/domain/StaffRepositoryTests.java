@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,6 +40,29 @@ public class StaffRepositoryTests {
 
         // TODO then
         Assert.assertEquals(staff.getHiredDay(), recentData.getHiredDay());
+    }
+
+    @Test
+    public void 직원_모두_가져오기() {
+        String workGb = "IN";
+
+        /**
+         * 기준 work GB
+         */
+        List<Staff> list
+                = staffRepository.findAllByWorkGbOrderByStaffPkDesc(workGb);
+
+        Assert.assertNotEquals(list, null);
+    }
+
+    @Test
+    public void 특정_직원_가져오기() {
+        int staffPk = 1;
+
+        Staff staff =
+                staffRepository.findByStaffPk(staffPk);
+
+        Assert.assertNotEquals(staff, null);
     }
 
     @After
