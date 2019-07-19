@@ -13,13 +13,18 @@ public class MembershipPurchaseService {
 
     @Autowired
     private MembershipPurchasedHistoryRepository membershipPurchasedHistoryRepository;
+    @Autowired
+    private MembershipUsedService membershipUsedService;
 
     /**
      * 최초 등록 시 MembershipUsed 에도 기록
      */
     @Transactional
     public void enroll(MembershipPurchasedHistory membershipPurchasedHistory) {
-        membershipPurchasedHistoryRepository.save(membershipPurchasedHistory);
+        MembershipPurchasedHistory getMbsPurchasedH =
+                membershipPurchasedHistoryRepository.save(membershipPurchasedHistory);
+
+        membershipUsedService.enrollFirst(getMbsPurchasedH);
     }
 
     @Transactional

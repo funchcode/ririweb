@@ -2,6 +2,7 @@ package com.funch.ririweb.domain.reservations;
 
 import com.funch.ririweb.domain.BaseTimeEntity;
 import com.funch.ririweb.domain.commons.Code;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -21,6 +22,7 @@ public final class Reservation extends BaseTimeEntity {
     private LocalDateTime finishedTime;
     private int guestFk;
     private int staffFk;
+
 
     private Reservation(Builder builder) {
         this.reservationStGb = builder.reservationStGb;
