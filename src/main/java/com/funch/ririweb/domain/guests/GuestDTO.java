@@ -26,4 +26,8 @@ public final class GuestDTO {
                 .staffFk(staffFk).build();
     }
 
+    public boolean validation() {
+        return !("".equals(this.guestNm) || this.guestNm == null
+                || "".equals(this.phone) || this.phone == null);
+    }
 }

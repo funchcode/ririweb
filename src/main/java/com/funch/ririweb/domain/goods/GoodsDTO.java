@@ -21,5 +21,4 @@ public final class GoodsDTO {
         return new Goods(goodsNm, purchasePrice, sellingPrice
         , stock, memo, creditorFk).setUsedGb(usedGb);
     }
-
 }

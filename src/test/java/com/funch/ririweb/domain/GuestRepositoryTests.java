@@ -1,13 +1,9 @@
 package com.funch.ririweb.domain;
 
-import com.funch.ririweb.domain.goods.Goods;
-import com.funch.ririweb.domain.goods.GoodsRepository;
 import com.funch.ririweb.domain.guests.Guest;
+import com.funch.ririweb.domain.guests.GuestDTO;
 import com.funch.ririweb.domain.guests.GuestRepository;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,9 +11,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+/**
+ * TODO 고객 등록, 특정 고객 찾기, 모든 고객 찾기
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GuestRepositoryTests {
+
     @Autowired
     private GuestRepository guestRepository;
 
@@ -27,16 +27,24 @@ public class GuestRepositoryTests {
     }
 
     @Test
-    public void 고객_등록() {
-        // TODO given
-        Guest guest = new Guest.Builder("김말큐", "010-0000-0000").build();
+    public void 고객등록_프로세스() {
+        String name = "김고객";
+        String phone = "010-0000-0000";
+        Guest guest = null;
+        GuestDTO dto = new GuestDTO();
+        dto.setGuestNm(name);
+        dto.setPhone(phone);
 
-        // TODO when
-        guestRepository.save(guest);
-        Guest recentData = guestRepository.findTopByOrderByGuestPkDesc();
+        if (dto.validation()) {
+            Guest result = null;
+            result = guestRepository.save(guest);
+            // 결과물 처리
+        }
 
-        // TODO then
-        Assert.assertEquals(guest.getGuestNm(), recentData.getGuestNm());
+        Guest recentData = null;
+        recentData = guestRepository.findTopByOrderByGuestPkDesc();
+
+        Assert.assertEquals(guest.getGuestPk(), recentData.getGuestPk());
     }
 
     @Test
