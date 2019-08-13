@@ -1,7 +1,7 @@
 package com.funch.ririweb.domain.commons;
 
 public final class Code {
-    public static final String AD_WALKING = "WALING";
+    public static final String AD_WALKING = "WALKING";
     public static final String AD_NAVER = "NAVER";
     public static final String AD_INSTAGRAM = "INSTAGRAM";
     public static final String AD_RECOMMEND = "RECOMMEND";

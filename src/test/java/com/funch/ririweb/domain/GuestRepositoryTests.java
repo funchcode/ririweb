@@ -10,9 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
+    
 /**
- * TODO 고객 등록, 특정 고객 찾기, 모든 고객 찾기
+ * TODO 고객 등록, 특정 고객 찾기, 모든 고객 찾기, 고객 정보 수정
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -34,6 +34,7 @@ public class GuestRepositoryTests {
         GuestDTO dto = new GuestDTO();
         dto.setGuestNm(name);
         dto.setPhone(phone);
+        guest = dto.toEntity();
 
         if (dto.validation()) {
             Guest result = null;
@@ -45,6 +46,18 @@ public class GuestRepositoryTests {
         recentData = guestRepository.findTopByOrderByGuestPkDesc();
 
         Assert.assertEquals(guest.getGuestPk(), recentData.getGuestPk());
+    }
+
+    /**
+     * Key 변경 거부
+     */
+    @Test
+    public void 고객정보수정_프로세스() {
+        int existGuestPk = 4;
+
+        GuestDTO guestDTO = new GuestDTO();
+        String phone = "010-1111-1111";
+        String memo = "신규 고객입니다.";
     }
 
     @Test

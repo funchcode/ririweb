@@ -49,6 +49,12 @@ public final class Guest extends BaseTimeEntity {
         private int staffFk;
 
         public Guest build() {
+            if (this.adGb == null) {
+                this.adGb = Code.AD_WALKING;
+            }
+            if (this.genderGb == null) {
+                this.genderGb = Code.GENDER_WOMAN;
+            }
             return new Guest(this);
         }
 
@@ -85,14 +91,6 @@ public final class Guest extends BaseTimeEntity {
         public Builder(String guestNm, String phone) {
             this.guestNm = guestNm;
             this.phone = phone;
-            /**
-             * AD_GB Default
-             */
-            this.adGb = Code.AD_WALKING;
-            /**
-             * GENDER_GB Default
-             */
-            this.genderGb = Code.GENDER_WOMAN;
         }
     }
 }
